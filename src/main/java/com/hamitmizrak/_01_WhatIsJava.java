@@ -1,6 +1,12 @@
 package com.hamitmizrak;
 
+// github.com/settings/keys  SSH-keys
+/**/
 public class _01_WhatIsJava {
-    // github.com/settings/keys  SSH-keys
-    /**/
+
+    // psvm
+    public static void main(String[] args) {
+        // SOUT
+        System.out.println("Ekran Çıktısı");
+    }
 }
