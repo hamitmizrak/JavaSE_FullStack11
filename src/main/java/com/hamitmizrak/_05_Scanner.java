@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class _05_Scanner {
     public static void main(String[] args) {
-        int x = 5;
+       /* int x = 5;
         int k = 3;
         int y = 3 * x + 4 * k;
         System.out.println(y);
@@ -15,13 +15,14 @@ public class _05_Scanner {
         System.out.println("k sayısını giriniz");
         int k2 = scanner.nextInt();
         int y2 = 3 * x2 + 4 * k2;
-        System.out.println(y2);
+        System.out.println(y2);*/
 
 
         // VKİ: Vucut Kitle indeksi:
         // Kullanıcıdan aldığımız Boy ve Kilo'a göre VKİ hesaplayan Java algoritmasını yazınız ?
         // Formül ==> vki=kilo/boy*boy
         // Tips: double değişkeni ile yapabilirsiniz
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Lütfen boyunuzu giriniz");
         double boy = scanner.nextDouble();
 
