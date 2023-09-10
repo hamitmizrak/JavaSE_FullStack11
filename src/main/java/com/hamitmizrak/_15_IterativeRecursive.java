@@ -1,10 +1,4 @@
 package com.hamitmizrak;
-///////////////////////////////////////////////////////////////////
-// Access Modifier (public-private-default-protected)
-// Method
-// Iterative Method
-// Recursive Method
-
 
 ///////////////////////////////////////////////////////////////////
 // Class bileşenleri
@@ -27,7 +21,7 @@ package com.hamitmizrak;
 // polymorhism
 // this, super
 // new, null,zero
-public class _14_Method {
+public class _15_IterativeRecursive {
 
 
     // 1-) voidliParametresiz
