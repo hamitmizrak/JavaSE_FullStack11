@@ -1,65 +1,87 @@
 package com.hamitmizrak;
 
-///////////////////////////////////////////////////////////////////
-// Class bileşenleri
-// Override
-// Overloading
-// Encapsulation
-// Inner Class
+import java.util.Scanner;
 
-///////////////////////////////////////////////////////////////////
-// Dizi
-// File
-// Threading
-// Collections
-// Java 8 gelen özelliklerde
-// OOP
-// Class (Lombok)
-// inheritance
-// abstract
-// interface
-// polymorhism
-// this, super
-// new, null,zero
+// Enum
+enum EFactoriyel {
+    ITERATIVE_FACTORIYEL, RECURSIVE_FACTORIYEL
+}
+
+// static
+class StaticData {
+    // Const
+    public static final String SYSTEM_LOGOUT = "Çıkış yapılıyor...";
+}
+
+// Faktöriyel hesaplayan iterative ve recursive java kodlarını yazınız ?
 public class _15_IterativeRecursive {
 
+    // Global Variable
+    private static Scanner klavye = new Scanner(System.in);
 
-    // 1-) voidliParametresiz
-    public static void voidliParametresiz() {
-        System.out.println("voidli Parametresiz");
+    // Kullanıcıdan veri almak
+    public Integer scannerUserData() {
+        Scanner klavye = new Scanner(System.in);
+        System.out.println("\nLütfen Faktöriyel için sayı giriniz");
+        int number = klavye.nextInt();
+        if (number < 0) {
+            System.out.println("Negatif sayısının faktöriyeli olmaz");
+            scannerUserData();
+        } else if (number == 0 || number == 1) {
+            System.out.println("0 ve 1 sayısını faktöriyeli 1'dir");
+            scannerUserData();
+        }
+        return number;
     }
 
-    // 2-) voidliParametreli
-    public static void voidliParametreli(String name) {
-        System.out.println("voidli Parametreli " + name);
+    // iterative factoriyel
+    public void iterativeFactoriyel(int number) {
+        int resultFactoriyel = 1;
+        for (int i = number; i >= 1; i--) {
+            resultFactoriyel *= i;
+        }
+        System.out.println(number + " sayısını faktöriyeli :" + resultFactoriyel);
     }
 
-    // 3-) voidsizParametresiz
-    public static String voidsizParametresiz() {
-        return "voidsiz Parametresiz";
+    // recursive factoriyel
+    public int recursiveFactoriyel(int number) {
+        if (number == 0 || number == 1)
+            return 1;
+        return number * recursiveFactoriyel(number - 1);
     }
 
-    // 4-) voidsizParametreli
-    public static String voidsizParametresiz(String name) {
-        return "voidsiz Parametreli " + name;
-    }
+    public void allIterativeAndResursiveMethod() {
+        _15_IterativeRecursive iterativeRecursive = new _15_IterativeRecursive();
+        // sonsuz method
+        while (true) {
+            // kullanıcıdan veri almak
+            int number = scannerUserData();
 
-    // Overloading
-    public static String voidsizParametresiz(String name,String surname) {
-        return "voidsiz Parametreli " + name+ " "+surname;
+            // Kullanıcıdan seçim almak
+            System.out.println("Lütfen Seçiniz:\n1-) Iterative Method\n2-) Recursive\n3-) Çıkış");
+            int chooise = klavye.nextInt();
+            switch (chooise) {
+                case 1:
+                    iterativeFactoriyel(number);
+                    break;
+                case 2:
+                    int result = recursiveFactoriyel(number);
+                    System.out.println(number + " sayısını faktöriyeli :" + result);
+                    break;
+                case 3:
+                    System.out.println(StaticData.SYSTEM_LOGOUT);
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("sadece size verilen aralıkta sayı girebilirsiniz");
+                    break;
+            }
+        }
     }
 
     public static void main(String[] args) {
-        voidliParametresiz();
-        voidliParametreli("Hamit Mızrak");
-
-        String temp3 = voidsizParametresiz();
-        System.out.println(temp3);
-
-        String temp4 = voidsizParametresiz("Hamit");
-        System.out.println(temp4);
-
-        String temp5 =  voidsizParametresiz("HAmit","Mızrak");
-        System.out.println(temp5);
+        _15_IterativeRecursive iterativeRecursive = new _15_IterativeRecursive();
+        iterativeRecursive.allIterativeAndResursiveMethod();
     }
+
 }
