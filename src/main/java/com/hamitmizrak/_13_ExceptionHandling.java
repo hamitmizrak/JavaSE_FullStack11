@@ -23,31 +23,5 @@ public class _13_ExceptionHandling {
     }
 
 
-    ///////////////////////////////////////////////////////////////////
-    // Access Modifier (public-private-default-protected)
-    // Method
-    // Primitive Method
-    // Recursive Method
 
-    ///////////////////////////////////////////////////////////////////
-    // Class bileşenleri
-    // Override
-    // Overloading
-    // Encapsulation
-    // Inner Class
-
-    ///////////////////////////////////////////////////////////////////
-    // Dizi
-    // File
-    // Threading
-    // Collections
-    // Java 8 gelen özelliklerde
-    // OOP
-    // Class (Lombok)
-    // inheritance
-    // abstract
-    // interface
-    // polymorhism
-    // this, super
-    // new, null,zero
 }
