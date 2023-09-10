@@ -17,7 +17,6 @@ public class _06_Cast {
         System.out.println("----------------------\n");
         // Tam sayıyadan  String'e çevir
         int number3=10;
-
         String str2=String.valueOf(number3);
         String str3=Integer.toString(number3);
         System.out.println(number3+10);
