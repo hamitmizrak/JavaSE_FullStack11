@@ -1,18 +1,43 @@
 package com.hamitmizrak;
 
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.concurrent.ExecutionException;
+
 public class _13_ExceptionHandling {
-    // Exception Handling
+
+    public static void main(String[] args) throws IndexOutOfBoundsException,ClassNotFoundException {
+        try {
+            int divideResult = 4 / 0;
+            System.out.println(divideResult);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            System.out.println("db.close");
+            System.out.println("socket.close");
+        }
+        // Exception Handling
+
+        System.out.println("Son Satır");
+        throw new HamitMizrakException("Burada bir hata var Dikkat !!!!!");
+    }
+
+
+    ///////////////////////////////////////////////////////////////////
     // Access Modifier (public-private-default-protected)
-    // Class bileşenleri
-    // Override
-    // Overloading
-    // Encapsulation
     // Method
     // Primitive Method
     // Recursive Method
 
-    // Dizi
+    ///////////////////////////////////////////////////////////////////
+    // Class bileşenleri
+    // Override
+    // Overloading
+    // Encapsulation
     // Inner Class
+
+    ///////////////////////////////////////////////////////////////////
+    // Dizi
     // File
     // Threading
     // Collections
