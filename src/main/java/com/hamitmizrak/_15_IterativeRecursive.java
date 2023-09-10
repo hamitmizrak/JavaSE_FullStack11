@@ -21,15 +21,19 @@ public class _15_IterativeRecursive {
 
     // Kullanıcıdan veri almak
     public Integer scannerUserData() {
-        Scanner klavye = new Scanner(System.in);
         System.out.println("\nLütfen Faktöriyel için sayı giriniz");
         int number = klavye.nextInt();
-        if (number < 0) {
-            System.out.println("Negatif sayısının faktöriyeli olmaz");
-            scannerUserData();
-        } else if (number == 0 || number == 1) {
-            System.out.println("0 ve 1 sayısını faktöriyeli 1'dir");
-            scannerUserData();
+        try {
+            if (number < 0) {
+                System.out.println("Negatif sayısının faktöriyeli olmaz");
+                //scannerUserData();
+                throw new HamitMizrakException("Faktöriyel için Sıfırdan küçük sayı giremezsiniz");
+            } else if (number == 0 || number == 1) {
+                System.out.println("0 ve 1 sayısını faktöriyeli 1'dir");
+                scannerUserData();
+            }
+        } catch (Exception exception) {
+            exception.printStackTrace();
         }
         return number;
     }
