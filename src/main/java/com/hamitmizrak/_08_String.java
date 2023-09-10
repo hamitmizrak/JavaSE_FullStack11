@@ -53,5 +53,37 @@ public class _08_String {
         // bu kelimenin "deneme" ile aynı mı ?  [ipucu: ipucu: equals("deneme");]
         // equals ile comparateTo arasındaki fark nedir ?
 
+        ////////////////////////////////////////////////////////////////////////////////////////
+        // StringBuilder
+        // StringTokenize
+        // Formatter
+        // Conditional
+        // Loop
+        // break, return,continue
+        // Date
+        // Exception Handling
+        // Access Modifier (public-private-default-protected)
+        // Class bileşenleri
+        // Override
+        // Overloading
+        // Encapsulation
+        // Method
+        // Primitive Method
+        // Recursive Method
+        // Enum
+        // Dizi
+        // Inner Class
+        // File
+        // Threading
+        // Collections
+        // Java 8 gelen özelliklerde
+        // OOP
+        // Class (Lombok)
+        // inheritance
+        // abstract
+        // interface
+        // polymorhism
+        // this, super
+        // new, null,zero
     }
 }
