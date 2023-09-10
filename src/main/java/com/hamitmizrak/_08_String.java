@@ -1,5 +1,7 @@
 package com.hamitmizrak;
 
+import java.util.StringTokenizer;
+
 public class _08_String {
     public static void main(String[] args) {
         System.out.println("String 1237");
@@ -53,10 +55,58 @@ public class _08_String {
         // bu kelimenin "deneme" ile aynı mı ?  [ipucu: ipucu: equals("deneme");]
         // equals ile comparateTo arasındaki fark nedir ?
 
+        System.out.println("");
         ////////////////////////////////////////////////////////////////////////////////////////
+
+
+        // + operant
+        String valueData="", str1="java",str2="jsp",str3="jsf";
+        valueData=str1+str2+str3;
+        System.out.println(valueData);
+
+        // concat
+        String concatValeue=str1.concat(str2).concat(str3);
+        System.out.println(concatValeue);
+
         // StringBuilder
-        // StringTokenize
-        // Formatter
+        StringBuilder stringBuilder=new StringBuilder();
+        stringBuilder.append(str1).append(str2).append(str3);
+        String changeTo=stringBuilder.toString();
+        System.out.println(changeTo);
+        System.out.println("");
+
+        ////////////////////////////////////////////////////////////////////////////////////////
+
+        String strValue="java öğreniyorum~/ jsp+-jsf servlet|";
+
+        // split
+        String[] splitValue =  strValue.split(" ");
+        for (String data : splitValue) {
+            System.out.println(data);
+        }
+
+        System.out.println("*******************************");
+        // StringTokenizer
+        StringTokenizer stringTokenizer=new StringTokenizer(strValue,"~/+-| ");
+        while(stringTokenizer.hasMoreTokens()){
+            System.out.println(stringTokenizer.nextToken());
+        }
+        System.out.println("*******************************");
+        ////////////////////////////////////////////////////////////////////////////////////////
+        // Formatter (SDF)
+        String strFormatter="Servlet öğreniyorum";
+        int numberFormatter=44;
+        float commaFormatter=56.50F;
+        System.out.printf("%s %d %f",strFormatter,numberFormatter,commaFormatter);
+        System.out.println("\n**");
+        System.out.printf("%30s %d %f",strFormatter,numberFormatter,commaFormatter);
+        System.out.println("\n**");
+        System.out.printf("%30s %10d %f",strFormatter,numberFormatter,commaFormatter);
+        System.out.println("\n**");
+        System.out.printf("%30s %10d %2.3f",strFormatter,numberFormatter,commaFormatter);
+
+        System.out.println("\n*******************************");
+        ////////////////////////////////////////////////////////////////////////////////////////
         // Conditional
         // Loop
         // break, return,continue
