@@ -4,7 +4,7 @@ package com.hamitmizrak;
 import java.util.Arrays;
 
 // Dizi
-public class _16_Array {
+public class _16_1_Array {
 
     public static void main(String[] args) {
         int[] dizi = new int[9];
@@ -65,5 +65,18 @@ public class _16_Array {
             System.out.print(temp + " ");
         }
 
+        System.out.println("\n///////////////////////////////////////////");
+        int [][] matrix=new int [2][2];
+        matrix[0][0]=1;
+        matrix[0][1]=2;
+        matrix[1][0]=3;
+        matrix[1][1]=4;
+
+        for (int i = 0; i < matrix.length; i++) {// satır(rows)
+            for (int k = 0; k < matrix[i].length; k++) { // sutun (cols)
+                System.out.print(matrix[i][k]+" ");
+            }
+            System.out.println();
+        }
     }
 }
