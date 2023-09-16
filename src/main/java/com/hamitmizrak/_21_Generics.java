@@ -1,7 +1,6 @@
 package com.hamitmizrak;
 
 
-
 // Collections
 // Generics
 // Java 8 gelen özelliklerde
