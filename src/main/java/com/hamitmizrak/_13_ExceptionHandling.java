@@ -1,9 +1,5 @@
 package com.hamitmizrak;
 
-import org.w3c.dom.ls.LSOutput;
-
-import java.util.concurrent.ExecutionException;
-
 public class _13_ExceptionHandling {
 
     public static void main(String[] args) throws IndexOutOfBoundsException,ClassNotFoundException {
@@ -21,7 +17,5 @@ public class _13_ExceptionHandling {
         System.out.println("Son Satır");
         throw new HamitMizrakException("Burada bir hata var Dikkat !!!!!");
     }
-
-
 
 }

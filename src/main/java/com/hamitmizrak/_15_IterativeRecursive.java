@@ -1,7 +1,7 @@
 package com.hamitmizrak;
 
 import java.util.Scanner;
-
+// 1 0 1 6
 // Enum
 enum EFactoriyel {
     ITERATIVE_FACTORIYEL, RECURSIVE_FACTORIYEL
