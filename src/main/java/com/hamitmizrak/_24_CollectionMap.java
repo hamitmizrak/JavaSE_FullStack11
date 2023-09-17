@@ -18,6 +18,10 @@ package com.hamitmizrak;
 // this, super
 // new, null,zero
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.UUID;
+
 // Linux Bash Script
 // SQL Native Select, Delete, Update, Find
 // Katmanlı Mimariye Giriş ,
@@ -26,35 +30,50 @@ package com.hamitmizrak;
 // PreparementStatement
 public class _24_CollectionMap {
 
-    private String name;
-
-    //parametreli-parametresiz constructor
-    public _24_CollectionMap() {}
-    public _24_CollectionMap(String name) {
-        this.name=name;
-    }
-
-    @Override
-    public String toString() {
-        return "_17_Class{" +
-                "name='" + name + '\'' +
-                '}';
-    }
-
-    // getter and setter
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    // H H L T
     public static void main(String[] args) {
-        //instance
-        _24_CollectionMap data=new _24_CollectionMap();
-        data.setName("Adı 44");
-        System.out.println(data.getName());
-        System.out.println(data);
+        Map<String,String> mapList=new LinkedHashMap<>();
+
+        mapList.put("1","kelime0");
+
+        // Iterative
+        for (int i = 0; i < 5 ; i++) {
+            mapList.put(UUID.randomUUID().toString(),"kelime"+i);
+        }
+
+        // KEY
+        for (String key :mapList.keySet()) {
+            System.out.println(key);
+        }
+        System.out.println("");
+
+        // VALUE
+        for (String value :mapList.values()) {
+            System.out.println(value);
+        }
+
+        // KEY-VALUE
+        System.out.println("");
+        for (String key :mapList.keySet()) {
+            System.out.println(key+" => "+mapList.get(key));
+        }
+        System.out.println("");
+
+        System.out.println(" GET "+mapList.get("1"));
+        System.out.println(" SIZE "+mapList.size());
+        System.out.println(" HASH CODE"+mapList.hashCode());
+        System.out.println(" TO STRING "+mapList.toString());
+        System.out.println(" KEY "+mapList.containsKey("1"));
+        mapList.remove("1");
+        System.out.println(" KEY "+mapList.containsKey("1"));
+        System.out.println(" VALUE "+mapList.containsValue("kelime0"));
+
+        System.out.println("******Lambda Expression Java 8**************");
+        mapList.entrySet().forEach((temp)->{
+            System.out.println(temp);
+        });
+
+        System.out.println("******Method Referances Java 8**************");
+        mapList.entrySet().forEach(System.out::println);
     }
 }
