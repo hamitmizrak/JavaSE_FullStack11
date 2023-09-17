@@ -24,37 +24,43 @@ package com.hamitmizrak;
 // Design Pattern (Singleton Design pattern) ,
 // MVC kendimiz yazacağız.
 // PreparementStatement
-public class _21_Generics {
 
-    private String name;
+// Generics: Wrapper Type tanır primitive tanımaz. Byte,Short,Integer,Long,Float,Double,Character
+// Cast işlemleriyle uğraşmaz
+// Tür güvenliğini sağlar
+// Bazen enduser'ın gireceğini türü bilmediğimiz zamanlarda kulanmak çok değerlidir.
+public class _21_Generics <T> {
 
-    //parametreli-parametresiz constructor
-    public _21_Generics() {}
-    public _21_Generics(String name) {
-        this.name=name;
+    // Global Variables
+    private T person;
+
+    // Parametresiz
+    public _21_Generics() {
     }
 
-    @Override
-    public String toString() {
-        return "_17_Class{" +
-                "name='" + name + '\'' +
-                '}';
+    // Parametreli
+    public _21_Generics(T person) {
+        this.person = person;
     }
 
-    // getter and setter
-    public String getName() {
-        return name;
+    // Method
+    public <K> void genericsMethod(T name, T surname,T number, K country, String city){
+        System.out.println(name+" "+surname+" "+number+" "+country+" "+city);
     }
 
-    public void setName(String name) {
-        this.name = name;
+    // GETTER AND SETTER
+    public Object getPerson() {
+        return person;
+    }
+
+    public void setPerson(T person) {
+        this.person = person;
     }
 
     public static void main(String[] args) {
-        //instance
-        _21_Generics data=new _21_Generics();
-        data.setName("Adı 44");
-        System.out.println(data.getName());
-        System.out.println(data);
+        _21_Generics generics=new _21_Generics();
+        generics.setPerson(true);
+        System.out.println(generics.getPerson());
+        generics.genericsMethod("Hamit",7877878,44,"Türkiye","İstanbul");
     }
 }
