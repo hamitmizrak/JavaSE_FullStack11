@@ -1,8 +1,8 @@
 package com.hamitmizrak;
 
-
-// Collections
 // Generics
+// Collections
+
 // Java 8 gelen özelliklerde
 ///////////////////////////////////////////////////////////////////
 // OOP
@@ -17,6 +17,13 @@ package com.hamitmizrak;
 // polymorhism
 // this, super
 // new, null,zero
+
+// Linux Bash Script
+// SQL Native Select, Delete, Update, Find
+// Katmanlı Mimariye Giriş ,
+// Design Pattern (Singleton Design pattern) ,
+// MVC kendimiz yazacağız.
+// PreparementStatement
 public class _21_Generics {
 
     private String name;
