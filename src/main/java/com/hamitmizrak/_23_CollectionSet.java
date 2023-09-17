@@ -18,6 +18,8 @@ package com.hamitmizrak;
 // this, super
 // new, null,zero
 
+import java.util.*;
+
 // Linux Bash Script
 // SQL Native Select, Delete, Update, Find
 // Katmanlı Mimariye Giriş ,
@@ -26,35 +28,50 @@ package com.hamitmizrak;
 // PreparementStatement
 public class _23_CollectionSet {
 
-    private String name;
-
-    //parametreli-parametresiz constructor
-    public _23_CollectionSet() {}
-    public _23_CollectionSet(String name) {
-        this.name=name;
-    }
-
-    @Override
-    public String toString() {
-        return "_17_Class{" +
-                "name='" + name + '\'' +
-                '}';
-    }
-
-    // getter and setter
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public static void main(String[] args) {
-        //instance
-        _23_CollectionSet data=new _23_CollectionSet();
-        data.setName("Adı 44");
-        System.out.println(data.getName());
-        System.out.println(data);
+        // H - L - T
+        // Set<Integer> listem=new HashSet<>(); //eleman sırası önemli değilse
+        // Set<Integer> listem=new LinkedHashSet<>(); //eleman sırası önemli ise
+        Set<Integer> listem=new TreeSet<>(); //Tekrarsız Küçükten büyüğe doğru
+        listem.add(20);
+        listem.add(30);
+        listem.add(10);
+        listem.add(40);
+        listem.add(30);
+        listem.add(20);
+        System.out.println("Eleman sayısı :"+listem.size());
+
+        // forEach Döngüsü kullandım
+        for (Integer temp : listem) {
+            System.out.print(temp +" ");
+        }
+
+        listem.remove(0);
+        System.out.println("\n******************");
+        // forEach Döngüsü kullandım
+        for (Integer temp : listem) {
+            System.out.print(temp +" ");
+        }
+
+        System.out.println("\n******************");
+        System.out.println("Boş mu: "+listem.isEmpty());
+        System.out.println("Var mı: "+listem.contains(10));
+        System.out.println("toString: "+listem.toString().concat("90"));
+        System.out.println("hashCode: "+listem.hashCode());
+
+        System.out.println("*******Iterator***********");
+        Iterator iterator=listem.iterator();
+        while (iterator.hasNext()){
+            System.out.print(iterator.next()+" ");
+        }
+
+        System.out.println("\n*******Stream***********");
+        listem.stream().forEach((temp)->{
+            System.out.print(temp+" ");
+        });
+
+        System.out.println("\n******************");
+        listem.stream().forEach(System.out::println);
+        listem.clear();
     }
 }

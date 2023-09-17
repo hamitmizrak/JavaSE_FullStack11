@@ -30,7 +30,9 @@ import java.util.List;
 // PreparementStatement
 public class _22_CollectionList {
 
+
     public static void main(String[] args) {
+        // L - A - V
         List<Integer> listem=new ArrayList<>(); //ekleme, arama
         //List<Integer> listem=new LinkedList<>(); //silme,araya yerleştirme
         listem.add(20);
@@ -71,13 +73,5 @@ public class _22_CollectionList {
         System.out.println("\n******************");
         listem.stream().forEach(System.out::println);
         listem.clear();
-
-
-
-
-
-
-
     }
-
 }
