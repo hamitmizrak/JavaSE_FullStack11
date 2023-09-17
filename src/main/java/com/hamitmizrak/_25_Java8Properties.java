@@ -15,7 +15,9 @@ package com.hamitmizrak;
 // this, super
 // new, null,zero
 
+import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -54,7 +56,9 @@ public class _25_Java8Properties {
     public static List<String> streamCollectMethod(){
         List<String> list=getArrayToList();
         //List<String> list=getList();
-        List<String> resultList= list.stream().collect(Collectors.toList());
+        List<String> resultList= list
+                .stream()
+                .collect(Collectors.toList());
        return resultList;
     }
 
@@ -69,7 +73,20 @@ public class _25_Java8Properties {
     // Sorted: Küçükten Büyüğe
     public static void streamSortedMethod(){
         List<String> list=streamCollectMethod();
-        list.stream().sorted().forEach((temp)->{
+        list
+                .stream()
+                .sorted()
+                .forEach((temp)->{
+            System.out.println(temp);
+        });
+    }
+
+    // Sorted: Büyükten Küçüğe
+    public static void streamReverseSortedMethod(){
+        List<String> list=streamCollectMethod();
+        list.stream()
+                .sorted(Comparator.reverseOrder())
+                .forEach((temp)->{
             System.out.println(temp);
         });
     }
@@ -83,6 +100,56 @@ public class _25_Java8Properties {
             System.out.println(temp);
         });
     }
+
+    // Search Filter: filtreleme Listeleme
+    public static void streamFilterSearchMethod(){
+        List<String> list=streamCollectMethod();
+        list.stream()
+                .forEach((temp)->{
+                    System.out.println(temp);
+                });
+
+        String searchValue= JOptionPane.showInputDialog("Lütfen aramak istediğinzi kelimeyi yazınız");
+        list.stream()
+                .filter((temp)->searchValue.equals(temp))
+                .collect(Collectors.toList())
+                .forEach(System.out::println);
+    }
+
+    // Search Filter: filtreleme Listeleme
+    // Count
+    public static void streamFilterSearchCountMethod(){
+        List<String> list=streamCollectMethod();
+        list.stream()
+                .forEach((temp)->{
+                    System.out.println(temp);
+                });
+
+        String searchValue= JOptionPane.showInputDialog("Lütfen aramak istediğinzi kelimeyi yazınız");
+       Long counter= list.stream()
+                .filter((temp)->searchValue.equals(temp))
+                .count();
+        System.out.println("Aradığınız "+searchValue+" kelimesinden "+ counter+ " tane veri vardır");
+    }
+
+
+    // Aradığımız kelimeyi bulsun ve hepsini büyük karaktere çevirsin
+    // Search Filter: filtreleme Listeleme
+    public static void streamMapFilterSearchMethod(){
+        List<String> list=streamCollectMethod();
+        list.stream()
+                .forEach((temp)->{
+                    System.out.println(temp);
+                });
+
+        String searchValue= JOptionPane.showInputDialog("Lütfen aramak istediğinzi kelimeyi yazınız");
+        list.stream()
+                .filter((temp)->searchValue.equals(temp))
+                .map((temp)->temp.toUpperCase())
+                .collect(Collectors.toList())
+                .forEach(System.out::println);
+    }
+
 
     // distinct: Tekrar eden verileri kaldırır.
     public static void streamDistinctMethod(){
@@ -108,11 +175,12 @@ public class _25_Java8Properties {
     public static void main(String[] args) {
         //streamForEachMethod();
         //streamSortedMethod();
+        //streamReverseSortedMethod();
         //streamFilterMethod();
-        streamDistinctMethod();
+        //streamFilterSearchMethod();
+        //streamFilterSearchCountMethod();
+        streamMapFilterSearchMethod();
+        //streamDistinctMethod();
         //streamFilterLimitMethod();
-
     }
-
-
 }
