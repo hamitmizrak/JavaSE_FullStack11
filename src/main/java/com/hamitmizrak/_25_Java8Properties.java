@@ -116,7 +116,7 @@ public class _25_Java8Properties {
                 .forEach(System.out::println);
     }
 
-    // Search Filter: filtreleme Listeleme
+    // Search Filter Count: filtreleme Listeleme
     // Count
     public static void streamFilterSearchCountMethod(){
         List<String> list=streamCollectMethod();
@@ -149,7 +149,6 @@ public class _25_Java8Properties {
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
     }
-
 
     // distinct: Tekrar eden verileri kaldırır.
     public static void streamDistinctMethod(){
