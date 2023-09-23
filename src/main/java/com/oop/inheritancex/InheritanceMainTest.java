@@ -37,6 +37,7 @@ public class InheritanceMainTest {
         student.setSurname("student surname");
         System.out.println(student.getName()+" "+student.getSurname());
         student.fullName();
+        student.setSpecialStudentLesson("Matematik");
         System.out.println(student);
         System.out.println("------------------------------------------");
     }
