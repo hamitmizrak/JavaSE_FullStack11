@@ -3,8 +3,8 @@ package com.oop.inheritancex;
 public class Person {
 
     // Global
-    private String name;
-    private String surname;
+    protected String name;
+    protected String surname;
 
     // Constructor
     public Person() {
