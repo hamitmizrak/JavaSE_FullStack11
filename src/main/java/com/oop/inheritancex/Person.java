@@ -2,6 +2,7 @@ package com.oop.inheritancex;
 
 public class Person {
 
+    // Global
     private String name;
     private String surname;
 
@@ -14,12 +15,18 @@ public class Person {
         this.surname = surname;
     }
 
+    // ToString
     @Override
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 '}';
+    }
+
+    // Method Full Name
+    public void fullName(){
+        System.out.println(this.name+" "+this.surname);
     }
 
     // GETTER AND SETTER
